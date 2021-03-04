@@ -18,28 +18,28 @@ async function connect() {
 connect()
 
 
-// app.get('/books', async(req, res) => {
-//     //input
+app.get('/books', async(req, res) => {
+    //input
 
-//     //process
-//     const cursor = await booksConllection.find({})
-//     const result = await cursor.toArray()
+    //process
+    const cursor = await booksConllection.find({})
+    const result = await cursor.toArray()
 
-//     //output
-//     res.status(200).json(result) 
-// })
+    //output
+    res.status(200).json(result) 
+})
 
-// app.get('/books/:id', async(req, res) => {
-//     //input
-//     let id = req.params.id
+app.get('/books/:id', async(req, res) => {
+    //input
+    let id = req.params.id
 
-//     //process
-//     const book = await booksConllection.findOne({ _id: ObjectId(id) })
+    //process
+    const book = await booksConllection.findOne({ _id: ObjectId(id) })
 
 
-//     //output
-//     res.status(200).json(book) 
-// })
+    //output
+    res.status(200).json(book) 
+})
 // POST movies//
 app.post('/books', async(req, res) => {
     //input
@@ -68,7 +68,7 @@ app.post('/books', async(req, res) => {
     bookID = result.insertedId
 
     //output
-    res.status(201).json(bookID)
+    res.status(200).json(bookID)
 })
 
 const port = 3000
